@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  frontendserver:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    image: frontend-server-img
+    container_name: frontend-server-container
+    networks:
+      - stock-network
+    ports:
+      - "6255:6255"
+    depends_on:
+      - orderserver
+      - catalogserver
+  orderserver:
+    build:
+      context: .
+      dockerfile: order.Dockerfile
+    image: order-server-img
+    container_name: order-server-container
+    networks:
+      - stock-network
+    depends_on:
+      - catalogserver
+    volumes:
+      - ./backend/files:/app/data
+  catalogserver:
+    build:
+      context: .
+      dockerfile: catalog.Dockerfile
+    image: catalog-server-img
+    container_name: catalog-server-container
+    networks:
+      - stock-network
+    volumes:
+      - ./backend/files:/app/data
+networks:
+  stock-network: {}
