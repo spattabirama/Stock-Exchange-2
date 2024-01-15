@@ -1,10 +1,4 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10462011&assignment_repo_type=AssignmentRepo)
-
-Compsci 677: Distributed and Operating Systems
-
-Spring 2023
-
-# Lab 2: Asterix and the Microservice Stock Bazaar
+# Asterix and the Microservice Stock Bazaar
 
 ## Goals and Learning Outcomes
 
@@ -22,29 +16,6 @@ The lab also has the following learning outcomes with regards to practice and mo
    consisting of multiple containers using Docker Compose.
 4. Learn how to test a distributed application.
 
-## Information about your submission
-1. Name and email: add your name and email here. 
-2. Team member name and email: add team member info. say none if this is a solo submission
-3. Number of late days used for this lab: say zero if none used
-4. Number of late days used so far including this lab: say zero if none used.
-
-
-## Instructions
-
-1. You may work in groups of two for this lab. If you decide to work in groups, you should briefly
-    describe how the work is divided between the two team members in your README file. Be sure to
-    list the names of all team members at the top of this README file.
-
-2. You can use either python or Java for this assignment. You may optionally use C++ but TA support
-    for C++ issues will be limited. For this lab you may use different languages for different
-    microservices if you want.
-
-3. Do's and don'ts:
-   - discuss lab with other students: allowed
-   - use of AI tools: allowed with attribution (be sure to read policy in course syllabus)
-   - use code from others/Internet/friends/coders for hire: disallowed
-   - ask TAs for clarifications/help: always allowed
-
 ## Lab Description
 
 At the very beginning the bazaar served the Gauls well. However, with the growing popularity of meme
@@ -58,9 +29,6 @@ Instead of using a monolithic server, we will now employ a two-tier design (a fr
 back-end tier)  for the stock bazaar using microservices at each tier. The front-end is implemented
 as a single microservice, while the back-end is implemented as two separate services: a stock catalog
 service and an stock order service.
-
-Note: You are not required to use any code from Lab 1, but please feel free to use any parts of lab
-1 for lab 2 if it is useful to you.
 
 ## Part 1: Implement Your Two-Tiered Stock Bazaar as Microservices
 
@@ -281,79 +249,3 @@ Using these measurements, answer the following questions:
    observed latency?
 3. How does the latency change as the number of clients change? Does it change for different types
    of requests?
-
-
-
-## What to Submit
-
-At the top of this README file add the name(s) and UMass email address(es) of all the team members.
-Also if you are working in a group, briefly describe how the work is divided.
-
-You solution should contain source code for both parts separately. Inside the `src` directory, you
-should have a separate folder for each component/microservice, e.g., a `client` folder for client
-code, a `front-end` folder for the front-end service, etc.
-
-The dockerfiles and Docker compose files should be placed under the root folder. Also include a
-`build.sh` script that can build all your images. This script should be able to build your images on
-Edlab machines.
-
-A short README file on how to run your code. Include build/make files if you created any, otherwise
-the README instructions on running the code  should provide details on how to do so.
-
-Submit the following additional documents inside the docs directory. 1) A Brief design document (1
-to 2 pages) that explains your design choices (include citations, if you used referred to Internet
-sources), 2) An Output file (1 to 2 pages), showing sample output or screenshots to indicate your
-program works, and 3) An Evaluation doc (2 to 3 pages), for part 3 showing plots and making
-observations.
-
-Submit your testcases in the test directory. Attach sample output of test cases on the docs
-directory.
-
-Your GitHub repo is expected to contain many commits with proper commit messages (which is good
-programming practice). Use GitHub to develop your lab and not just to submit the final version. We
-expect a reasonable number of commits and meaningful commit messages from both members of the group
-(there is no "target" number of commits that is expected, just enough to show you are using GitHub
-as one should).
-
-## Grading Rubric
-
-1) Part 1 is 50% of the lab grade.
-
-    For full credit:
-
-    * Source code should build and work correctly (25%),
-    * Code should have in-line comments (5%),
-    * A descriptive design doc should be submitted with full design details (5%),
-    * Clear and full descrption of interfaces/API, including inputs and outputs, of each service (5%)
-    * An output file should be included (5%),
-    * GitHub repo should have adequate commits and meaningful commit messages (5%).
-
-2) Part 2 is 30% of the lab grade.
-
-    For full credit:
-
-    * The dockerfiles should build each microservice successfully (15%),
-    * The docker compose file should be able to bring up/tear down the whole application using one
-        command (10%),
-    * The catalog file and order log file should be persisted after container removal (5%).
-
-3) Part 3 is 20% of the grade.
-
-    For full credit:
-
-    * Eval document should be turned in with measurements for Part 1 and 2 (shown as plots where
-      possible and tables otherwise) (10%),
-    * Explaining the plots by addressing answers to the 4 questions listed in Part 3 (5%)
-    * Test cases and test case output (5%)
-
-As the late policy, will we deduct 10% per day. Medical or COVID exceptions require advanced notice,
-and should be submitted through Piazza (use the exceptionRequests folder in Piazza). Three free late
-days per group are available for the entire semester. Use them wisely and do not use them up for one
-lab by managing your time well.
-
-## References
-
-1. HTTP protocol: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
-2. Dockerfile reference: https://docs.docker.com/engine/reference/builder/
-3. Compose file reference: https://docs.docker.com/compose/compose-file/
-4. Docker volumes: https://docs.docker.com/storage/volumes/
